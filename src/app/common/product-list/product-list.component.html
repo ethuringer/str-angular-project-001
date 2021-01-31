@@ -1,39 +1,5 @@
 <div class="row">
-    <div class="p-4" *ngFor="let product of products">
+    <div class="col-3 p-4" *ngFor="let product of products | filter:phraseString:'name'">
       <app-product-card [product]="product"></app-product-card>
     </div>
   </div>
-
-  <!-- <div class="row">
-    <div class="col-8">
-      <h3>Products</h3>
-      <table class="table table-striped">
-        <thead>
-          <tr>
-            <th>#</th>
-            <th>catId</th>
-            <th>name</th>
-            <th>description</th>
-            <th>image</th>
-            <th>price</th>
-            <th>stock</th>
-            <th>featured</th>
-            <th>active</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let product of products">
-             <td>{{ product.id }}</td>
-             <td>{{ product.catId }}</td>
-             <td>{{ product.name }}</td>
-             <td>{{ product.description }}</td>
-             <td>{{ product.image }}</td>
-             <td>{{ product.price }}</td>
-             <td>{{ product.stock }}</td>
-             <td>{{ product.featured }}</td>
-             <td>{{ product.active }}</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </div> -->

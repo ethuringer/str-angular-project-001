@@ -7,8 +7,8 @@ import { Product } from 'src/app/model/product';
   styleUrls: ['./product-list.component.scss']
 })
 export class ProductListComponent implements OnInit {
+  @Input() phraseString: string = '';
   @Input() products: Product[] = [];
-  currentProduct: Product = new Product();
 
   constructor() { }
 

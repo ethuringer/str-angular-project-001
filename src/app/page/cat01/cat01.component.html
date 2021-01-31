@@ -1,1 +1,8 @@
-<p>cat01 works!</p>
+<div class="input-group mb-3">
+    <input (keyup)="onChangePhrase($event)" type="text" class="form-control" placeholder="Search">
+    <div class="input-group-append">
+      <button class="btn btn-outline-secondary" type="submit" id="button-addon2">Search</button>
+    </div>
+  </div>
+
+<app-product-list [phraseString]="phrase" [products]="productList"></app-product-list>

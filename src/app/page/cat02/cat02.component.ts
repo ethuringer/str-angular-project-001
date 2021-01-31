@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Product } from 'src/app/model/product';
+import { ProductService } from 'src/app/service/product.service';
 
 @Component({
   selector: 'app-cat02',
@@ -7,9 +9,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class Cat02Component implements OnInit {
 
-  constructor() { }
+  productList: Product[] = this.service.list.filter(product => {
+    return product.catId === 2;
+  })
+  
+  phrase: string = '';
+
+  constructor(private service: ProductService) { }
 
   ngOnInit(): void {
+  }
+
+  onChangePhrase(event: Event): void {
+    this.phrase = (event.target as HTMLInputElement).value;
   }
 
 }

@@ -10,6 +10,7 @@ import { ProductService } from 'src/app/service/product.service';
 })
 export class HomeComponent implements OnInit {
   productList: Product[] = this.service.list;
+  phrase: string = '';
 
   constructor( 
     private service: ProductService, 
@@ -17,6 +18,10 @@ export class HomeComponent implements OnInit {
     ) { }
 
   ngOnInit(): void {
+  }
+
+  onChangePhrase(event: Event): void {
+    this.phrase = (event.target as HTMLInputElement).value;
   }
 
 }
