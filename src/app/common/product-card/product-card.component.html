@@ -1,9 +1,9 @@
-<div class="card">
+  <div class="card user-card" *ngIf="product.id > 0">
     <img src="{{ product.image }}" class="card-img-top" alt="...">
+    <div class="card-header">{{ product.name }}</div>
     <div class="card-body">
-      <h1>{{ product.name }}</h1>
-      <p class="card-text">{{ product.description }}</p>
-      <p class="card-text">{{ product.stock }}</p>
-      <p class="card-text">{{ product.price }}</p>
+      <p>name: {{ product.description }}</p>
+      <p>Készleten: {{ product.stock }}</p>
+      <p>Ár: {{ product.price }}</p>
     </div>
   </div>
