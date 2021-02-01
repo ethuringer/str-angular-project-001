@@ -8,11 +8,9 @@ import { Product } from 'src/app/model/product';
 })
 export class ProductPagingComponent implements OnInit {
   @Input() products: Product[];
-
   
-
-  constructor() { }
-
+  constructor( ) { }
+  
   ngOnInit(): void {
   }
 

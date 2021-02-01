@@ -1,6 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Product } from 'src/app/model/product';
-import { ConfigService } from 'src/app/service/config.service';
 import { ProductService } from 'src/app/service/product.service';
 
 @Component({
@@ -14,11 +13,13 @@ export class HomeComponent implements OnInit {
 
   constructor( 
     private service: ProductService, 
-    private config: ConfigService
     ) { }
 
   ngOnInit(): void {
   }
+
+  featuredProduct: Product[] = this.service.getFeatured(true)
+    .slice(0, 5);
 
   onChangePhrase(event: Event): void {
     this.phrase = (event.target as HTMLInputElement).value;
